@@ -27,15 +27,18 @@ $(function () {
     var layer = layui.layer//必然加
     $('#form_reg').on("submit", function (e) {
         e.preventDefault()
-        var data={
-            username: $('#form_reg [name=username]').val(),
-            password: $('#form_reg [name=password]').val()
-        }
+        //法一
+        // var data={
+        //     username: $('#form_reg [name=username]').val(),
+        //     password: $('#form_reg [name=password]').val()
+        // }
     
         $.ajax({
             method: "post",
             url: "http://ajax.frontend.itheima.net/api/reguser",
-            data: data,
+            // data: data,
+            //法二
+            data: $(this).serialize(),
             success: function (res) {
                 if (res.status != 0) {
                  console.log(layer.msg(res.message));   
