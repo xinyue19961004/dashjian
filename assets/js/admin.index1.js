@@ -37,8 +37,8 @@ $(function () {
             $('.layui-nav-img"').prop('scr', user.user_pic).show()
         } else {
             $('.layui-nav-img"').hide()
-            var first = name[0].toUpperCase()
-            $('.text-avatar').html('first')
+            var frst = name[0].toUpperCase()
+            $('.text-avatar').html(frst).show()
         }
     }
     //点击退出按钮，实现退出功能，清空内存，并跳转至首页
